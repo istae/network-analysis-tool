@@ -1,0 +1,278 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 46.87     47.53    47.53 1778105778     0.00     0.00  isneighbor
+ 29.96     77.91    30.38  1853775     0.00     0.00  walk_all
+ 11.41     89.48    11.57                             __fentry__
+  6.72     96.29     6.81                             _mcount_private
+  4.33    100.68     4.39 1978227250     0.00     0.00  vector_index
+  0.31    100.99     0.31  1855703     0.00     0.00  vector_dest
+  0.13    101.12     0.13 20280185     0.00     0.00  vector_push
+  0.13    101.25     0.13  5423293     0.00     0.00  walk_distance
+  0.06    101.31     0.06        1     0.06    82.98  betweenness
+  0.05    101.36     0.05  5302155     0.00     0.00  vector_init
+  0.01    101.37     0.01    28274     0.00     0.00  node_list_insert
+  0.01    101.38     0.01                             ___chkstk_ms
+  0.01    101.39     0.01                             memcpy
+  0.01    101.40     0.01                             realloc
+  0.00    101.40     0.00    16350     0.00     0.00  _getline
+  0.00    101.40     0.00    15243     0.00     0.00  hash
+  0.00    101.40     0.00    15242     0.00     0.00  hash_insert
+  0.00    101.40     0.00     1926     0.00     0.00  debug
+  0.00    101.40     0.00     1926     0.00     0.00  newnode
+  0.00    101.40     0.00     1104     0.00     0.00  remove_last
+  0.00    101.40     0.00        2     0.00    41.49  cmd
+  0.00    101.40     0.00        1     0.00     0.00  hash_find
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.01% of 101.40 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     81.8    0.00   82.99                 main [1]
+                0.00   82.98       2/2           cmd [2]
+                0.00    0.01   15242/15242       hash_insert [13]
+                0.00    0.00    1928/1855703     vector_dest [9]
+                0.00    0.00       3/5302155     vector_init [12]
+                0.00    0.00       1/1978227250     vector_index [8]
+                0.00    0.00   16350/16350       _getline [130]
+                0.00    0.00    1104/1104        remove_last [22]
+-----------------------------------------------
+                0.00   82.98       2/2           main [1]
+[2]     81.8    0.00   82.98       2         cmd [2]
+                0.06   82.92       1/1           betweenness [3]
+-----------------------------------------------
+                0.06   82.92       1/1           cmd [2]
+[3]     81.8    0.06   82.92       1         betweenness [3]
+               30.38   52.21 1853775/1853775     walk_all [4]
+                0.31    0.00 1853775/1855703     vector_dest [9]
+                0.02    0.00 3446451/20280185     vector_push [10]
+                0.00    0.00       1/1           hash_find [19]
+                0.00    0.00       1/1978227250     vector_index [8]
+                0.00    0.00    1926/1926        debug [21]
+-----------------------------------------------
+               30.38   52.21 1853775/1853775     betweenness [3]
+[4]     81.4   30.38   52.21 1853775         walk_all [4]
+               47.53    3.95 1778105778/1778105778     isneighbor [5]
+                0.44    0.00 200046744/1978227250     vector_index [8]
+                0.13    0.00 5423293/5423293     walk_distance [11]
+                0.11    0.00 16814532/20280185     vector_push [10]
+                0.05    0.00 5300226/5302155     vector_init [12]
+-----------------------------------------------
+               47.53    3.95 1778105778/1778105778     walk_all [4]
+[5]     50.8   47.53    3.95 1778105778         isneighbor [5]
+                3.95    0.00 1778105778/1978227250     vector_index [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]     11.4   11.57    0.00                 __fentry__ [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      6.7    6.81    0.00                 _mcount_private [7]
+-----------------------------------------------
+                0.00    0.00       1/1978227250     hash_find [19]
+                0.00    0.00       1/1978227250     betweenness [3]
+                0.00    0.00       1/1978227250     main [1]
+                0.00    0.00   18177/1978227250     hash_insert [13]
+                0.00    0.00   56548/1978227250     node_list_insert [14]
+                0.44    0.00 200046744/1978227250     walk_all [4]
+                3.95    0.00 1778105778/1978227250     isneighbor [5]
+[8]      4.3    4.39    0.00 1978227250         vector_index [8]
+-----------------------------------------------
+                0.00    0.00    1928/1855703     main [1]
+                0.31    0.00 1853775/1855703     betweenness [3]
+[9]      0.3    0.31    0.00 1855703         vector_dest [9]
+-----------------------------------------------
+                0.00    0.00    3852/20280185     newnode [18]
+                0.00    0.00   15350/20280185     node_list_insert [14]
+                0.02    0.00 3446451/20280185     betweenness [3]
+                0.11    0.00 16814532/20280185     walk_all [4]
+[10]     0.1    0.13    0.00 20280185         vector_push [10]
+-----------------------------------------------
+                0.13    0.00 5423293/5423293     walk_all [4]
+[11]     0.1    0.13    0.00 5423293         walk_distance [11]
+-----------------------------------------------
+                0.00    0.00       3/5302155     main [1]
+                0.00    0.00    1926/5302155     newnode [18]
+                0.05    0.00 5300226/5302155     walk_all [4]
+[12]     0.0    0.05    0.00 5302155         vector_init [12]
+-----------------------------------------------
+                0.00    0.01   15242/15242       main [1]
+[13]     0.0    0.00    0.01   15242         hash_insert [13]
+                0.01    0.00   28274/28274       node_list_insert [14]
+                0.00    0.00    1926/1926        newnode [18]
+                0.00    0.00   18177/1978227250     vector_index [8]
+                0.00    0.00   15242/15243       hash [20]
+-----------------------------------------------
+                0.01    0.00   28274/28274       hash_insert [13]
+[14]     0.0    0.01    0.00   28274         node_list_insert [14]
+                0.00    0.00   56548/1978227250     vector_index [8]
+                0.00    0.00   15350/20280185     vector_push [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.0    0.01    0.00                 memcpy [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     0.0    0.01    0.00                 realloc [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.0    0.01    0.00                 ___chkstk_ms [17]
+-----------------------------------------------
+                0.00    0.00    1926/1926        hash_insert [13]
+[18]     0.0    0.00    0.00    1926         newnode [18]
+                0.00    0.00    3852/20280185     vector_push [10]
+                0.00    0.00    1926/5302155     vector_init [12]
+-----------------------------------------------
+                0.00    0.00       1/1           betweenness [3]
+[19]     0.0    0.00    0.00       1         hash_find [19]
+                0.00    0.00       1/1978227250     vector_index [8]
+                0.00    0.00       1/15243       hash [20]
+-----------------------------------------------
+                0.00    0.00       1/15243       hash_find [19]
+                0.00    0.00   15242/15243       hash_insert [13]
+[20]     0.0    0.00    0.00   15243         hash [20]
+-----------------------------------------------
+                0.00    0.00    1926/1926        betweenness [3]
+[21]     0.0    0.00    0.00    1926         debug [21]
+-----------------------------------------------
+                0.00    0.00    1104/1104        main [1]
+[22]     0.0    0.00    0.00    1104         remove_last [22]
+-----------------------------------------------
+                0.00    0.00   16350/16350       main [1]
+[130]    0.0    0.00    0.00   16350         _getline [130]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [17] ___chkstk_ms           [19] hash_find               [9] vector_dest
+   [6] __fentry__             [13] hash_insert             [8] vector_index
+ [130] _getline                [5] isneighbor             [12] vector_init
+   [7] _mcount_private        [15] memcpy                 [10] vector_push
+   [3] betweenness            [18] newnode                 [4] walk_all
+   [2] cmd                    [14] node_list_insert       [11] walk_distance
+  [21] debug                  [16] realloc
+  [20] hash                   [22] remove_last
