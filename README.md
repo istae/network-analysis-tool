@@ -25,7 +25,7 @@ In the other branch, 'in' connects to 'first' and 'first' to 'sight'. Notice tha
 
 ## Flags
 
-- '-f filename':  file input formatted with the rules above. (see 'war.txt')
+- '-f filename':  file input formatted with the rules above. (see 'old.txt' adopted from Old Man and the Sea by Hemingway)
 - '-b': prints the hash balance of the hash table used to assign unique node lables and ids.
 
 ## Commands
