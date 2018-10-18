@@ -7,6 +7,8 @@ The tool can construct networks from files or stdin. The input must be formatted
 - Connection between nodes are done by placing neighbors nodes one after another in newlines.
 - To start a new branch in the network, a single '.' is placed in a new line. 
 
+Example:
+```
 love
 
 finds
@@ -26,7 +28,7 @@ first
 sight
 
 . 
-
+```
 In the above example, the word 'love' has two neighbors: 'finds' and 'in'. 'Finds' is connected to 'a' which then connects to 'way'.
 In the other branch, 'in' connects to 'first' and 'first' to 'sight'. Notice that '.' is used in a new line to start a new brach.
 
