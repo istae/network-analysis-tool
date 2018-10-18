@@ -10,23 +10,14 @@ The tool can construct networks from files or stdin. The input must be formatted
 Example:
 ```
 love
-
 finds
-
 a
-
 way
-
 .
-
 love
-
 in
-
 first
-
 sight
-
 . 
 ```
 In the above example, the word 'love' has two neighbors: 'finds' and 'in'. 'Finds' is connected to 'a' which then connects to 'way'.
