@@ -31,28 +31,29 @@ In the other branch, 'in' connects to 'first' and 'first' to 'sight'. Notice tha
 ## Commands
   ```
   [Commands] type 'commands' for the list
- top=
- total=
- shortest path=
- shortest path all=
- neighbors=
- count=
- is neighbor=
- betweenness=
- close cent=
- diameter
- edge density
- print all
- commands
- clear
- hash balance
- exit
- two community
+  top=(number),
+  total=('e' or 'n'),
+  shortest path=(label, label),
+  shortest path all=(label, label),
+  neighbors=(label),
+  count=(label),
+  is neighbor=(label, label),
+  betweenness=(label),
+  close cent=(label),
+  diameter
+  edge density
+  print all
+  commands
+  clear
+  hash balance
+  exit
 in 0.0100 (sec)
   ```
   
 After each '=' put a label name (or two in some cases) to run the commands
-ex:
+
+Example:
+
   ```
   demo -f old.txt
   
