@@ -14,15 +14,15 @@ void program_exit()
 {
     vector* le = edge_list.begin;
     for (int i=0; i < edge_list.length; i++)
-        vector_dest(le++);
+        vector_free(le++);
 
     vector* ls = short_passes.begin;
     for (int i=0; i < short_passes.length; i++)
-        vector_dest(ls++);
+        vector_free(ls++);
 
-    vector_dest(&edge_list);
-    vector_dest(&labels);
-    vector_dest(&short_passes);
+    vector_free(&edge_list);
+    vector_free(&labels);
+    vector_free(&short_passes);
 
     printf("\nbye\n");
 }

@@ -271,8 +271,8 @@ void short_path_all(char* str, const int len)
 
         // free vectors
         for (int i=0; i < rslt.length; i++)
-            vector_dest(vector_index(&rslt, i));
-        vector_dest(&rslt);
+            vector_free(vector_index(&rslt, i));
+        vector_free(&rslt);
         free(stack);
     }
 }
@@ -295,7 +295,7 @@ void betweeness(char* str)
         return;
 
     if (short_passes.length == 0) {
-        double next = .01;
+        double next = .005;
         printf("calculating all shortest paths...\n");
         node_walk* stack = malloc(sizeof(node_walk) * (total_nodes+1));
         if (stack == NULL) {
@@ -308,7 +308,7 @@ void betweeness(char* str)
                 vector* p = shell.begin;
                 for (int k=0; k < shell.length; k++)
                     vector_push(&short_passes, &p[k]);
-                vector_dest(&shell);
+                vector_free(&shell);
             }
             if ((double)i / total_nodes > next) {
                 printf("\r[%d%%] %d of %d", (int)(next*100), i, total_nodes);
@@ -436,8 +436,8 @@ void twocommunity()
     for (int i=0; i < B.length - stopB; i++)
         printf("%s\n", (char*)vector_index(&labels, nB[i]));
 
-    vector_dest(&A);
-    vector_dest(&B);
+    vector_free(&A);
+    vector_free(&B);
 }
 
 void neighbors(char* str)
@@ -458,7 +458,7 @@ void count(char* str)
 
 #define INT_PARAMS 0
 #define PARAMS_NEEDED 8
-#define MAXCMDLEN 20
+#define MAXCMDLEN 45
 
 void cmd(char* str, int len)
 {
@@ -480,7 +480,25 @@ void cmd(char* str, int len)
         "clear",
         "hash balance",
         "exit",
-        "two community"
+    };
+
+    static const char cmds_str[][MAXCMDLEN] = {
+        "top=(number)",
+        "total=('e' or 'n')",
+        "shortest path=(label, label)",
+        "shortest path all=(label, label)",
+        "neighbors=(label)",
+        "count=(label)",
+        "is neighbor=(label, label)",
+        "betweenness=(label)",
+        "close cent=(label)",
+        "diameter",
+        "edge density",
+        "print all",
+        "commands",
+        "clear",
+        "hash balance",
+        "exit",
     };
 
     static const int cmdslen = sizeof(cmds) / MAXCMDLEN;
@@ -555,7 +573,7 @@ void cmd(char* str, int len)
     else if (c == 9) diameter();
     else if (c == 10) print_edgedensity();
     else if (c == 11) print_all();
-    else if (c == 12) for(int i=0; i < cmdslen; i++) printf(" %s\n", cmds[i]);
+    else if (c == 12) for(int i=0; i < cmdslen; i++) printf(" %s\n", cmds_str[i]);
     else if (c == 13) system("clear");
     else if (c == 14) print_hash_balance();
     else if (c == 15) exit(0);
